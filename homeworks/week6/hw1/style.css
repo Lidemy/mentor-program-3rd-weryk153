@@ -1,0 +1,116 @@
+body {
+  margin: 0; 
+ }
+
+ .nav {
+  background: rgba(60, 60, 60);
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-title {
+  color: white;
+  font-size: 22px;
+}
+
+.nav div {
+  display: inline-block;
+}
+
+.nav-menu .menu-items {
+  margin-left: 15px;
+  color: rgb(143, 143, 143);
+  display: inline;
+}
+
+.header {
+  background: #e5e6e7;
+}
+
+.header-info {
+  margin: 0px auto;
+  padding: 42px 25px;
+  max-width: 960px;
+}
+
+.header-title {
+  font-size: 72px;
+}
+
+.header-text {
+  line-height: 1em;
+}
+
+.button-learnmore {
+  background: rgb(47, 113, 235);
+  display: inline-block;
+  padding: 8px 20px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 10px;
+  color: white;
+}
+
+.content {
+  margin: 0px auto;
+  padding: 25px;
+  max-width: 960px;
+}
+
+.heading {
+  display: inline-block;
+  max-width: 32%;
+}
+
+.heading-title {
+  font-size: 32px;
+}
+
+.heading-text {
+  line-height: 1em;
+}
+
+.heading-button {
+  background: rgb(104, 104, 104);
+  display: inline-block;
+  padding: 6px 10px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+  color: white;
+}
+
+.footer {
+  margin-top: 20px;
+  border-top: 1px solid rgb(224, 224, 224);
+  padding: 20px;  
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+  .heading {
+    display: block;
+  }
+
+  .header-title {
+    font-size: 36px;
+  }
+
+  .nav-menu {
+    margin-left: 5px;
+  }
+
+  .nav {
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .header-title {
+    font-size: 18px;
+  }
+}

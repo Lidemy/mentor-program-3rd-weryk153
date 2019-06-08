@@ -1,0 +1,80 @@
+body {
+  margin: 0; 
+ }
+
+.clap {
+  position: fixed;
+  top: 155px;
+  left: 30px;
+}
+
+.article {
+  margin: 0px auto;
+  max-width: 960px;
+  padding: 25px 100px;
+}
+
+.circle {
+  border: 1px solid rgb(189, 189, 189);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.circle > div {
+  text-align: center;
+  transform: translate(0%, 30%)
+}
+
+.circle .clap-times {
+  padding-top: 5px;
+}
+
+.circle .clap-image {
+  transform: translate(0%, 0.5%)
+}
+
+.circle:hover{
+  border-color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+
+.article .title {
+  font-size: 44px;
+  padding-top: 10px; 
+  font-family: sans-serif;
+}
+
+.article .text {
+  font-size: 20px;
+  font-family: sans-serif;
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .clap {
+    left: 12px;
+  }
+}
+
+@media screen and (max-width: 1076px) {
+  .article {
+    padding: 0px 25px;
+  }
+
+  .clap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .article .title {
+    font-size: 28px;
+  }
+
+  .article .text {
+    font-size: 12px;
+  }
+}
+
+
