@@ -9,6 +9,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
 }
 
 .nav-title {
@@ -17,13 +19,12 @@ body {
 }
 
 .nav div {
-  display: inline-block;
+  display: flex;
 }
 
 .nav-menu .menu-items {
   margin-left: 15px;
   color: rgb(143, 143, 143);
-  display: inline;
 }
 
 .header {
@@ -60,11 +61,6 @@ body {
   max-width: 960px;
 }
 
-.heading {
-  display: inline-block;
-  max-width: 32%;
-}
-
 .heading-title {
   font-size: 32px;
 }
@@ -93,7 +89,8 @@ body {
 
 @media screen and (max-width: 700px) {
   .heading {
-    display: block;
+    flex-wrap: wrap;
+    margin-top: 10px;
   }
 
   .header-title {
@@ -111,6 +108,6 @@ body {
 
 @media screen and (max-width: 250px) {
   .header-title {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
