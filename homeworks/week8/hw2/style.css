@@ -1,0 +1,53 @@
+body, p, a, div {
+  margin: 0;
+}
+
+.board-title {
+  text-align: center;
+  color: rgb(82, 42, 37);
+}
+
+.board {
+  position: relative;
+  border: 2px solid rgb(77, 77, 77);
+  max-width: 640px;
+  margin: 0 auto;
+  top: 100px;
+  background: rgb(197, 159, 116);
+}
+
+.post {
+  margin: 0 auto;
+  max-width: 480px;
+  height: 100px;
+  margin-top: 10px;
+  border: 1px solid rgb(73, 73, 73);
+  background: tan;
+  padding: 10px 20px;
+}
+
+.post:last-child {
+  margin-bottom: 20px;
+}
+.board-comment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0 auto;
+  max-width: 480px;
+  border: 1px solid rgb(73, 73, 73);
+  background: tan;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.textarea {
+  width: 474px;
+  height: 100px;
+  font-size: 14px;
+  resize: none;
+}
+
+.btn {
+  margin-top:5px; 
+}

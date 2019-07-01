@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.lottery__title {
+  margin-top: 100px;
+}
+
+.lottery__description {
+
+}
+
+.btn {
+  margin-top: 100px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 10px 30px;
+  background: rgb(255, 156, 75);
+  color: white;
+  outline:none;
+}
+
+.btn:hover {
+  background: rgb(255, 115, 0);
+}
+
+.prize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prize-image {
+  height: 300px;
+}
+
+.prize-result {
+  margin-top:16px; 
+  font-size: 24px;
+}
+
+.noprize {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  color: white;
+}
+
+.none {
+  display: none;
+}
+
+.bg-black {
+  background: rgb(37, 37, 37);
+}
+
+.bg-blue {
+  background: rgb(83, 186, 255);
+}
