@@ -1,0 +1,72 @@
+body, p {
+  margin: 0;
+}
+
+.bg {
+  background: url('https://cdna.artstation.com/p/assets/images/images/007/492/298/large/mike-azevedo-01.jpg?1506508008');
+  background-attachment: fixed;
+}
+
+.title {
+  color: white;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 44px;
+  margin: 16px 0;
+}
+.title p {
+  font-size: 20px;
+  color: rgb(235, 245, 255);
+}
+
+.main-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 40px;
+}
+
+.channels {
+  width: 320px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  background: rgba(48, 33, 14, 0.603);
+  padding: 5px 0;
+}
+
+.img-bg {
+  display:block;
+}
+
+.status {
+  margin-left: 20px;
+}
+
+.img-logo {
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.status > p {
+  width: 220px;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  color: rgb(223, 223, 223);
+}
+
+.link {
+  text-decoration: none;
+}
