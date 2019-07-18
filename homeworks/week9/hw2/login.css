@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fg-password {
+  text-decoration: none;
+}
