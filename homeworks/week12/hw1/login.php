@@ -6,25 +6,28 @@
 
   if(!empty($_POST['username'])) {
     $username = $_POST['username'];
-    $sql = "SELECT * FROM k_users WHERE username = '$username'";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $user_id = $row['id'];
-    
+
+    $sql = "SELECT * FROM k_users WHERE username=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
     if (!$result->num_rows) {
       $error_message = '帳號或密碼錯誤';
     }
     if (!password_verify($_POST['password'], $row['password'])) {
       $error_message = '帳號或密碼錯誤';
+    } else {
+      $row = $result->fetch_assoc();
+      $user_id = $row['id'];
+      $rand = uniqid();
+      setcookie("session_id", $rand, time() + 3600 * 24);
+      $sql = "INSERT INTO k_users_certificate(id, user_id) VALUE('$rand', $user_id)";
+      $result = $conn->query($sql);
+      header('Location: ./index.php');
+      $conn->close();
     }
-
-    $rand = uniqid();
-    setcookie("session_id", $rand, time() + 3600 * 24);
-    $sql = "INSERT INTO k_users_certificate(id, user_id) VALUE('$rand', $user_id)";
-    $result = $conn->query($sql);
-    header('Location: ./index.php');
-    $conn->close();
-  }
+  } 
 ?> 
 <!DOCTYPE html>
 <html lang="en">
