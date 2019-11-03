@@ -1,12 +1,13 @@
 <?php
+  session_start();
   require_once('./conn.php');
   
   if (
     isset($_POST['nickname']) && 
-    !empty($_POST['nickname']) &&
     isset($_POST['username']) && 
-    !empty($_POST['username']) &&
     isset($_POST['password']) && 
+    !empty($_POST['nickname']) &&
+    !empty($_POST['username']) &&
     !empty($_POST['password'])
   ) { 
     $nickname = $_POST['nickname'];
@@ -17,9 +18,10 @@
     $result = $conn->query($sql);
     $conn->close();
     if ($result) {
+      $_SESSION['username'] = $username;
       echo "<script>
               alert('註冊成功');
-              window.location = 'login.php';
+              window.location = 'index.php';
             </script>";
     } else {
       header('Location: ./register.php');

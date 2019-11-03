@@ -1,11 +1,13 @@
 body, p, a, div {
   margin: 0;
 }
-
-.nav ul {
+.nav {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-end;
+}
+.nav ul {
+  display: flex;
   margin-right: 20px;
   list-style:none;
  }
@@ -21,12 +23,11 @@ body, p, a, div {
   justify-content: flex-end;
   list-style:none;
   font-size: 10px;
+}
 
- }
-
- li + li {
-   margin-left: 10px;
- }
+li + li {
+  margin-left: 10px;
+}
 
 .board-title {
   width: 800px;
@@ -34,6 +35,7 @@ body, p, a, div {
   margin-top: 20px;
   text-align: center;
   color: rgb(82, 42, 37);
+  font-size: 32px;
 }
 
 .board {
