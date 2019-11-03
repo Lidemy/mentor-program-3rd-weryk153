@@ -1,10 +1,15 @@
 <?php 
+  session_start();
   require_once('./conn.php');
 
   $error_message = '';
-  $user_id = '';
 
-  if (isset($_POST['username']) && !empty($_POST['username'])) {
+  if (
+    isset($_POST['username']) &&
+    isset($_POST['password']) &&
+    !empty($_POST['username']) &&
+    !empty($_POST['password'])
+  ) {
     $username = $_POST['username'];
 
     $sql = "SELECT * FROM k_users WHERE username=?";
@@ -19,18 +24,11 @@
     if (!password_verify($_POST['password'], $row['password'])) {
       $error_message = '帳號或密碼錯誤';
     } else {
-      $user_id = $row['id'];
-      $token = uniqid();
-      $sql = "DELETE FROM k_users_certificate WHERE user_id = $user_id";
-      $conn->query($sql);
-
-      $sql = "INSERT INTO k_users_certificate(id, user_id) VALUE('$token', $user_id)";
-      $conn->query($sql);
-      setcookie("session_id", $token, time()+3600*24);
+      $_SESSION['username'] = $username;
       header('Location: ./index.php');
     }
+    $conn->close();
   }
-  $conn->close();
 ?> 
 <!DOCTYPE html>
 <html lang="en">
