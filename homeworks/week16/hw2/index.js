@@ -4,8 +4,7 @@ class Stack {
   }
 
   push(num) {
-    this.num = num;
-    this.arr.unshift(this.num);
+    this.arr.unshift(num);
   }
 
   pop() {
@@ -25,8 +24,7 @@ class Queue {
   }
 
   push(num) {
-    this.num = num;
-    this.arr.unshift(this.num);
+    this.arr.unshift(num);
   }
 
   pop() {
