@@ -16,9 +16,6 @@ $(document).ready(() => {
   });
 
   $('.todo-list').on('click', '.btn-mark', function () {
-    $(this).parent().toggleClass('list-item-done');
-    $(this).toggleClass('todo__undone').toggleClass('todo__done');
-    $(this).text($(this).hasClass('todo__undone') ? '完成' : '未完成');
     // 找出被點擊元素的 id，然後改 isCompleted 的值
     const listId = $(this).parent().attr('id');
     list = list.filter((item) => {
@@ -29,6 +26,7 @@ $(document).ready(() => {
       }
       return true;
     });
+    render();
   });
 
   $('.todo-list').on('click', '.todo__delete', function () {
@@ -52,24 +50,16 @@ function removeTodo(id) {
 function render() {
   $('.todo-list').empty();
   list.forEach((el) => {
-    if (el.isCompleted) {
-      $('.todo-list').append(`
-      <li id=${el.id} class="list-item list-item-done">
-        <div class="list-item-prepend">
-          <div  class="btn todo__delete">x</div>
-          ${el.content}
-        </div>
-        <div class="btn todo__done btn-mark">未完成</div>
-      </li>`);
-    } else {
-      $('.todo-list').append(`
-      <li id=${el.id} class="list-item">
-        <div class="list-item-prepend">
-          <div  class="btn todo__delete">x</div>
-          ${el.content}
-        </div>
-        <div class="btn todo__undone btn-mark">完成</div>
-      </li>`);
-    }
+    const badgeClass = el.isCompleted ? 'list-item-done' : '';
+    const todoStatus = el.isCompleted ? 'todo__done' : 'todo__undone';
+    const badgeText = el.isCompleted ? '未完成' : '完成';
+    $('.todo-list').append(`
+    <li id=${el.id} class="list-item ${badgeClass}">
+      <div class="list-item-prepend">
+        <div class="btn todo__delete">x</div>
+        ${el.content}
+      </div>
+      <div class="btn ${todoStatus} btn-mark">${badgeText}</div>
+    </li>`);
   });
 }
