@@ -6,8 +6,13 @@
     $user_id = $_POST['user_id'];
     $parent_id = $_POST['parent_id'];
 
-    $sql = "INSERT INTO k_comments(content, user_id, parent_id) VALUE('$content', $user_id, $parent_id)";
-    $conn->query($sql);
+    $sql = "INSERT INTO k_comments(content, user_id, parent_id) VALUE(?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sii", $content, $user_id, $parent_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    
     
     $sql = "SELECT * FROM k_comments WHERE user_id = $user_id order by id desc limit 1";
     $result = $conn->query($sql);
